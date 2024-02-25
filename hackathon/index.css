@@ -1,0 +1,25 @@
+video {
+    margin-inline: 300px; /* Example width */
+    height: auto; /* Example height */
+}
+
+.start-stop {
+    margin: 30px 300px;
+}
+
+button {
+    padding: 7px;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: blue
+}
+
+#startButton {
+    background-color: green;
+}
+
+#stopButton {
+    background-color: red;
+} 
