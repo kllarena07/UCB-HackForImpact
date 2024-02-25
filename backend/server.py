@@ -39,9 +39,6 @@ def extract_audio():
     audio_clip.write_audiofile(audio_output_path)
 
     video_clip.close()
-    transcribe()
-    
-    prunes_files()
 
 @app.route('/upload', methods=['POST'])
 def upload_video():
@@ -54,7 +51,10 @@ def upload_video():
         return jsonify({'error': 'No selected file'})
 
     file.save("imported_video.mp4")
+    
     extract_audio()
+    transcribe()
+    prunes_files()
     
     return jsonify({'message': 'File uploaded successfully'})
 
