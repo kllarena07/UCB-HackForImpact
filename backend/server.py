@@ -43,8 +43,6 @@ def extract_audio():
     
     prunes_files()
 
-extract_audio()
-
 @app.route('/upload', methods=['POST'])
 def upload_video():
     if 'file' not in request.files:
