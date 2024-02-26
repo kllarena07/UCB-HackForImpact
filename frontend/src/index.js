@@ -65,7 +65,7 @@ async function submitRecording() {
             body: formData
         })
         const json = await response.json()
-        console.log(json)
+        document.querySelector('pre').innerHTML = JSON.parse(json.suggestions).choices[0].message.content
     } catch (err) {
         console.error(err)
     }
