@@ -1,10 +1,23 @@
+body{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.some-text {
+    text-align: center;
+}
+
 video {
     margin-inline: 300px; /* Example width */
     height: auto; /* Example height */
 }
 
 .start-stop {
-    margin: 30px 300px;
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    gap: 5px;
 }
 
 button {
