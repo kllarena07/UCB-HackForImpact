@@ -47,3 +47,6 @@ venv.bak/
 
 # Dependency directories
 pip-wheel-metadata/
+
+*.mp3
+*.mp4

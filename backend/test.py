@@ -1,11 +1,12 @@
 import os
-import requests
-from flask import Flask, request, jsonify
-from flask_cors import CORS
-import assemblyai as aai
-from dotenv import load_dotenv
 from openai import OpenAI, ChatCompletion
+from dotenv import load_dotenv
+
 load_dotenv()
+
+client = OpenAI(
+    api_key=os.getenv("OAI_API_KEY")
+)
 
 data = """
 1. **Graphic Designer**
@@ -431,59 +432,25 @@ New
    - **Necessary Skills:** Knowledge of AI technologies, understanding of music theory, programming skills, creativity, collaboration skills.
 """
 
-def query_openai(transcript):
-    client = OpenAI(
-    api_key=os.getenv("OAI_API_KEY"))
-    head = "Here's some information about me:"
-    prompt = "Based on what I told you about me, suggest me 3 jobs that are fit for me using the following data:"
+# Define the prompt
+head = "Here's some information about me:"
+prompt = "Based on what I told you about me, tell me what jobs are fit for me using the following data:"
 
-    completion = client.chat.completions.create(
-        messages=[
-            {
-                "role": "user",
-                "content": f'{head} {transcript} {prompt} {data}',
-            }
-        ],
-        model="gpt-3.5-turbo"
-    )
+# Create the chat completion with the prompt and JSON data
+completion: ChatCompletion = client.chat.completions.create(
+    messages=[
+        {
+            "role": "user",
+            "content": f'{head} {transcript} {prompt} {data}',
+        }
+    ],
+    model="gpt-3.5-turbo-1106",
+    response_format={"type": "json_object"}
+)
 
-    return completion.json()
-
-def prune_audio_file():    
-    if os.path.exists("./extracted_audio.mp3"):
-        os.remove("./extracted_audio.mp3")
-
-def transcribe():
-    aai.settings.api_key = os.getenv("AAI_API_KEY")
-
-    FILE_URL = "./extracted_audio.mp3"
-
-    transcriber = aai.Transcriber()
-    transcript = transcriber.transcribe(FILE_URL)
-
-    if transcript.status == aai.TranscriptStatus.error:
-        print(transcript.error)
-    else:
-        return transcript.text
-
-app = Flask(__name__)
-CORS(app)
-
-@app.route('/upload', methods=['POST'])
-def upload():
-    prune_audio_file()
-    try:
-        audio_file = request.files['audio']
-        
-        audio_file.save("extracted_audio.mp3")
-        print("Audio file saved as: extracted_audio.mp3")
-        
-        transcript = transcribe()
-        jobs = query_openai(transcript)
-        
-        return jsonify({'suggestions': jobs})
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
-
-if __name__ == '__main__':
-    app.run(debug=True)
+# Print the generated response
+if completion.choices:
+    generated_response = completion.choices[0].message.get('content')
+    print("Generated response:", generated_response)
+else:
+    print("No response generated.")
