@@ -1,20 +1,12 @@
 import os
 import requests
 from flask import Flask, request, jsonify
-from moviepy.editor import VideoFileClip
+from flask_cors import CORS
 import assemblyai as aai
 from dotenv import load_dotenv
 load_dotenv()
 
-API_URL = os.getenv("TWELVELABS_API_URL")
-TASKS_URL = f"{API_URL}/tasks"
-
-app = Flask(__name__)
-
-def prunes_files():
-    if os.path.exists("./imported_video.mp4"):
-        os.remove("./imported_video.mp4")
-        
+def prune_audio_file():    
     if os.path.exists("./extracted_audio.mp3"):
         os.remove("./extracted_audio.mp3")
 
@@ -31,32 +23,25 @@ def transcribe():
     else:
         print(transcript.text)
 
-def extract_audio():
-    video_clip = VideoFileClip("./imported_video.mp4")
-    audio_clip = video_clip.audio
-
-    audio_output_path = "./extracted_audio.mp3"
-    audio_clip.write_audiofile(audio_output_path)
-
-    video_clip.close()
+app = Flask(__name__)
+CORS(app)
 
 @app.route('/upload', methods=['POST'])
-def upload_video():
-    if 'file' not in request.files:
-        return jsonify({'error': 'No file part'})
-    
-    file = request.files['file']
-    
-    if file.filename == '':
-        return jsonify({'error': 'No selected file'})
-
-    file.save("imported_video.mp4")
-    
-    extract_audio()
-    transcribe()
-    prunes_files()
-    
-    return jsonify({'message': 'File uploaded successfully'})
+def upload():
+    prune_audio_file()
+    try:
+        audio_file = request.files['audio']
+        
+        # Save the audio file
+        audio_file.save("extracted_audio.mp3")
+        print("Audio file saved as: extracted_audio.mp3")
+        
+        transcribe()
+        
+        return jsonify({'message': 'Audio file received and saved successfully'})
+    except Exception as e:
+        # Handle exceptions
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)

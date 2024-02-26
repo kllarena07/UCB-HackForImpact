@@ -6,6 +6,7 @@ const submitButton = document.getElementById('submitButton');
 
 let mediaRecorder;
 let recordedChunks = [];
+let audioBlob;
 
 startButton.addEventListener('click', startRecording);
 stopButton.addEventListener('click', stopRecording);
@@ -15,9 +16,23 @@ submitButton.addEventListener('click', submitRecording);
 async function startRecording() {
     const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
     videoElement.srcObject = stream;
-    mediaRecorder = new MediaRecorder(stream);
+    
+    // Only record audio
+    const audioStream = new MediaStream(stream.getAudioTracks());
+    mediaRecorder = new MediaRecorder(audioStream);
+
     mediaRecorder.ondataavailable = handleDataAvailable;
     mediaRecorder.start();
+
+    mediaRecorder.onstop = () => {
+        const blob = new Blob(recordedChunks, { type: 'audio/mp3' });
+        audioBlob = blob;
+        const url = URL.createObjectURL(blob);
+        const audio = document.createElement('audio');
+        audio.controls = true;
+        audio.src = url;
+        videoElement.replaceWith(audio);
+    };
     
     startButton.disabled = true;
     stopButton.disabled = false;
@@ -33,33 +48,27 @@ function stopRecording() {
 }
 
 function playRecording() {
-    const blob = new Blob(recordedChunks, { type: 'video/webm' });
-    const url = URL.createObjectURL(blob);
-    const video = document.createElement('video');
-    video.controls = true;
-    video.src = url;
-    videoElement.replaceWith(video);
+    const url = URL.createObjectURL(audioBlob);
+    const audio = document.createElement('audio');
+    audio.controls = true;
+    audio.src = url;
+    videoElement.replaceWith(audio);
 }
 
-function submitRecording() {
-    const blob = new Blob(recordedChunks, { type: 'video/webm' });
-    const formData = new FormData();
-    formData.append('video', blob, 'recording.webm');
-    
-    // Submit formData using fetch or XMLHttpRequest
-    // Example using fetch:
-    /*
-    fetch('/upload', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => {
-        // Handle response
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-    */
+async function submitRecording() {
+    try {
+        const formData = new FormData();
+        formData.append('audio', audioBlob, 'audio.mp3');
+
+        const response = await fetch("http://127.0.0.1:5000/upload", {
+            method: "POST",
+            body: formData
+        })
+        const json = await response.json()
+        console.log(json)
+    } catch (err) {
+        console.error(err)
+    }
 }
 
 function handleDataAvailable(event) {
