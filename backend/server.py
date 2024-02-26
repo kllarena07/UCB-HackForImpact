@@ -31,8 +31,7 @@ data = """
 6. **Digital Marketer (with Design Skills)**
    - **Description:** Digital marketers with design skills are responsible for creating visually appealing content for digital marketing campaigns. They design graphics, videos, and other multimedia assets to engage audiences and drive traffic and conversions.
    - **Core Values:** Creativity, Data-Driven Decision Making, Adaptability, Collaboration.
-   - **Necessary Skills:** Proficiency in graphic design software, understanding of digital marketing channels (e.g., social media, email, SEO), analytical skills, creativity, communication skills.
-Certainly! Here are more jobs in art, design, and technology along with their descriptions, core values, and necessary skills:
+   - **Necessary Skills:** Proficiency in graphic design software, understanding of digital marketing channels (e.g., social media, email, SEO), analytical skills, creativity, communication skills. Certainly! Here are more jobs in art, design, and technology along with their descriptions, core values, and necessary skills:
 7. **Art Director**
    - **Description:** Art directors are responsible for the visual style and imagery in magazines, newspapers, product packaging, and movie and television productions. They oversee the work of other designers and artists to ensure that their artistic vision is fulfilled.
    - **Core Values:** Leadership, Creativity, Visionary Thinking, Collaboration.
@@ -70,12 +69,6 @@ Certainly! Here are more jobs in art, design, and technology along with their de
     - **Description:** AI ethicists analyze the ethical implications of AI technologies and provide guidance on responsible AI development and deployment. They address issues such as bias, privacy, transparency, and accountability to ensure that AI systems are designed and used ethically.
     - **Core Values:** Ethics, Critical Thinking, Collaboration, Advocacy.
     - **Necessary Skills:** Knowledge of ethics, philosophy, and social sciences, understanding of AI technologies and their societal impact, communication skills, ability to collaborate with interdisciplinary teams.
-
-
-
-
-
-6:34
 16. **Environmental Graphic Designer**
     - **Description:** Environmental graphic designers create visual designs for physical spaces such as buildings, parks, and museums. They integrate graphics, signage, wayfinding systems, and environmental elements to enhance the user experience and communicate information effectively.
     - **Core Values:** User-Centric Design, Sustainability, Collaboration, Innovation.
@@ -116,8 +109,7 @@ Of course! Here are more jobs in art, design, and technology, along with their d
 25. **Digital Marketing Analyst**
     - **Description:** Digital marketing analysts analyze data from digital marketing campaigns to measure performance, identify trends, and make data-driven recommendations for optimizing marketing strategies.
     - **Core Values:** Analytical Thinking, Continuous Learning, Collaboration, Adaptability.
-    - **Necessary Skills:** Proficiency in data analysis tools (e.g., Google Analytics, Adobe Analytics), understanding of digital marketing channels, statistical analysis skills, communication skills, ability to work in a team environment.
-Certainly! Here are additional jobs in art, design, and technology, along with their descriptions, core values, and necessary skills:
+    - **Necessary Skills:** Proficiency in data analysis tools (e.g., Google Analytics, Adobe Analytics), understanding of digital marketing channels, statistical analysis skills, communication skills, ability to work in a team environment. Certainly! Here are additional jobs in art, design, and technology, along with their descriptions, core values, and necessary skills:
 26. **Architect**
    - **Description:** Architects design buildings and structures, considering both aesthetics and functionality. They create detailed plans and drawings, oversee construction projects, and ensure that designs meet building codes and regulations.
    - **Core Values:** Creativity, Attention to Detail, Sustainability, Collaboration.
@@ -159,7 +151,6 @@ Certainly! Here are more roles in art, design, and technology:
    - **Description:** Experiential designers create immersive and engaging physical environments or installations that evoke emotional responses and tell stories. They combine elements such as space, light, sound, and interactive technologies to create memorable experiences.
    - **Core Values:** Creativity, Innovation, User Experience, Collaboration.
    - **Necessary Skills:** Spatial design skills, knowledge of sensory elements (lighting, sound, texture), proficiency in design software, understanding of user experience principles, collaboration and project management skills.
-6:34
 36. **E-learning Designer**
    - **Description:** E-learning designers develop educational materials and courses delivered through digital platforms. They create interactive multimedia content, design user interfaces, and implement instructional strategies to facilitate learning.
    - **Core Values:** Education, Innovation, Accessibility, Collaboration.
@@ -247,7 +238,6 @@ Certainly! Here are more roles in art, design, and technology:
    - **Description:** AI engineers develop and implement artificial intelligence algorithms and systems for various applications, such as natural language processing, computer vision, and machine learning. They design and train AI models to solve complex problems and improve efficiency.
    - **Core Values:** Innovation, Problem-solving, Ethical Considerations, Collaboration.
    - **Necessary Skills:** Programming skills (e.g., Python, Java), knowledge of machine learning algorithms, familiarity with AI frameworks (e.g., TensorFlow, PyTorch), analytical skills, collaboration skills.
-6:34
 57. **Character Designer**
    - **Description:** Character designers create original characters for use in animations, video games, comics, and other media. They develop character concepts, designs, and visual styles that convey personality, emotion, and storytelling.
    - **Core Values:** Creativity, Character Development, Storytelling, Collaboration.
@@ -305,7 +295,6 @@ Certainly! Here are more roles within the realms of art, design, and technology:
    - **Description:** Creative coding specialists use programming languages to create interactive and generative artworks, installations, and digital experiences. They combine coding with visual design, animation, and sound to produce innovative and expressive creative projects.
    - **Core Values:** Innovation, Creativity, Technical Proficiency, Collaboration.
    - **Necessary Skills:** Proficiency in coding languages (e.g., Processing, JavaScript), understanding of creative coding frameworks, knowledge of design principles, collaboration skills, creativity.
-6:35
 71. **Art Curator**
    - **Description:** Art curators manage collections of artwork in museums, galleries, and cultural institutions. They research and select artwork for exhibitions, interpret pieces for the public, and oversee the acquisition, preservation, and display of artwork.
    - **Core Values:** Preservation, Education, Cultural Understanding, Collaboration.
@@ -345,9 +334,7 @@ Certainly! Here are more roles within the realms of art, design, and technology:
 80. **Artificial Intelligence (AI) Artist**
    - **Description:** AI artists use artificial intelligence and machine learning algorithms to create artworks, generate visuals, and explore new forms of creative expression. They collaborate with AI researchers and technologists to push the boundaries of art and technology.
    - **Core Values:** Innovation, Creativity, Collaboration, Ethical Considerations.
-   - **Necessary Skills:** Understanding of AI technologies, programming skills, creativity, collaboration skills, ethical awareness.
-New
-6:36
+   - **Necessary Skills:** Understanding of AI technologies, programming skills, creativity, collaboration skills, ethical awareness. New
 81. **Data Visualization Specialist**
    - **Description:** Data visualization specialists design and create visual representations of data to help people understand complex information more easily. They use charts, graphs, maps, and interactive dashboards to communicate insights and trends.
    - **Core Values:** Clarity, Accuracy, Creativity, Communication.
@@ -388,7 +375,6 @@ New
    - **Description:** Digital accessibility consultants advise organizations on making digital products and services accessible to people with disabilities. They assess digital properties for accessibility compliance, provide recommendations for improvements, and offer training and support to ensure inclusivity.
    - **Core Values:** Inclusivity, Empathy, Advocacy, Technical Proficiency.
    - **Necessary Skills:** Knowledge of accessibility guidelines (e.g., WCAG), understanding of assistive technologies, auditing skills, communication skills, advocacy skills.
-6:36
 91. **User Experience (UX) Architect**
    - **Description:** UX architects design the overall structure and flow of digital products and experiences to ensure intuitive user interactions and seamless navigation. They create wireframes, user flows, and prototypes to define the user experience.
    - **Core Values:** User-Centric Design, Information Architecture, Collaboration, Adaptability.
